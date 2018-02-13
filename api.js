@@ -123,9 +123,10 @@ utopian.getSponsor = (username) => {
     utopian.getSponsors().then((sponsors) => {
       sponsors.results.filter((sponsor) => {
         if (sponsor.account === username) {
-          resolve(sponsor)
+          resolve([sponsor])
         }
       })
+      resolve([])
     }).catch((err) => reject(err))
   })
 }
