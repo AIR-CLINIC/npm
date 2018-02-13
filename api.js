@@ -105,7 +105,7 @@ utopian.getModerator = (username) => {
     utopian.getModerators().then((moderators) => {
       moderators.results.filter((moderator) => {
         if (moderator.account === username && moderator.banned === false && moderator.reviewed === true) {
-          resolve(moderator)
+          resolve([moderator])
         }
       })
       resolve([])
