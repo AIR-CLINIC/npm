@@ -108,6 +108,7 @@ utopian.getModerator = (username) => {
           resolve(moderator)
         }
       })
+      resolve([])
     }).catch((err) => reject(err))
   })
 }
