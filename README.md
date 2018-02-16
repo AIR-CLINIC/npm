@@ -134,7 +134,7 @@ utopian.getPendingPostsCount().then((count) => {
 ````js
 const utopian = require('utopian-api');
 
-utopian.getTotalPostsCount().then((count) => {
+utopian.getTotalPostCount().then((count) => {
     console.log("There are " + count + " posts on utopian.io. AMAZING!");
 })
 ````
