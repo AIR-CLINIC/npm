@@ -138,12 +138,11 @@ utopian.getSponsor = (username) => {
 utopian.getPosts = (options) => {
   if (!options) options = {}
 
-  if (options.limit > 20 || options.limit < 1) {
+  if (!options.limit || options.limit < 1) {
     options.limit = 20
   }
 
-  if (options.length === 0) {
-    options.limit = 20
+  if (!options.skip || options.skip < 0) {
     options.skip = 0
   }
 
