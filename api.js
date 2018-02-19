@@ -214,11 +214,10 @@ utopian.getPostURL = (postID) => {
 utopian.getPostByAuthor = (username, options) => {
   return new Promise((resolve, reject) => {
     if (!options) options = {}
-    if (options.limit > 20 || options.limit < 1) {
-      options.limit = 20
+    if (!options.limit || options.limit < 1 || options.limit > 50) {
+      options.limit = 50
     }
-    if (options.length === 0) {
-      options.limit = 20
+    if (!options.skip || options.skip < 0) {
       options.skip = 0
     }
     options.section = 'author'
